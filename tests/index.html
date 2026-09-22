@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Water Tank Problem — Tests</title>
+<style>
+  body {
+    margin: 0;
+    padding: 2rem 1.5rem;
+    font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+  h1 { font-size: 1.25rem; margin: 0 0 1rem; }
+  h2 { font-size: 0.95rem; margin: 1.5rem 0 0.5rem; color: #555; text-transform: uppercase; letter-spacing: 0.06em; }
+  .summary { font-size: 1rem; font-weight: 700; padding: 0.6rem 0.9rem; border-radius: 4px; display: inline-block; }
+  .summary.pass { background: #e6f7ed; color: #10632f; }
+  .summary.fail { background: #fdecea; color: #a11b12; }
+  .case { padding: 0.15rem 0; }
+  .case.pass { color: #10632f; }
+  .case.fail { color: #a11b12; font-weight: 700; }
+  .detail { margin: 0.25rem 0 0.75rem 2.5rem; padding: 0.6rem 0.8rem; background: #fdecea; border-left: 3px solid #a11b12; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<h1>Water Tank Problem — Tests</h1>
+<div id="results"></div>
+
+<script src="harness.js"></script>
+<script src="../src/water-tank.js"></script>
+<script src="../src/renderer.js"></script>
+<script src="water-tank.test.js"></script>
+<script src="renderer.test.js"></script>
+<script>
+  (function () {
+    'use strict';
+    var summary = Harness.run();
+    Harness.reportToDocument(summary, document.getElementById('results'));
+    // Exposed so a headless run can read the result without scraping markup.
+    window.__testSummary = { passed: summary.passed, failed: summary.failed };
+  })();
+</script>
+
+</body>
+</html>

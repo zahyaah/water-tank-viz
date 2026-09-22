@@ -1,0 +1,175 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --rule: #d8d8d8;
+  --block: #ffe600;
+  --water: #1fa6e8;
+  --error: #a11b12;
+  --error-bg: #fdecea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.intro h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.intro p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+/* Controls */
+
+.controls {
+  margin: 2rem 0 2.5rem;
+}
+
+.controls__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.controls__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.controls__input {
+  flex: 1 1 18rem;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #9a9a9a;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1rem;
+  color: inherit;
+  background: #ffffff;
+}
+
+.controls__input:focus-visible {
+  outline: 2px solid var(--water);
+  outline-offset: 1px;
+}
+
+.controls__input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.controls__button {
+  flex: 0 0 auto;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls__button:hover {
+  background: #000000;
+}
+
+.controls__button:focus-visible {
+  outline: 2px solid var(--water);
+  outline-offset: 2px;
+}
+
+.controls__hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--error);
+  background: var(--error-bg);
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+/* Diagrams */
+
+.diagram {
+  margin: 0 0 2.5rem;
+}
+
+.diagram__caption {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.diagram__caption--output {
+  font-size: 1.15rem;
+}
+
+.diagram__canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend__swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1px solid var(--ink);
+}
+
+.legend__swatch--block { background: var(--block); }
+.legend__swatch--water { background: var(--water); }
+
+@media (max-width: 420px) {
+  .page { padding: 1.75rem 1rem 3rem; }
+  .intro h1 { font-size: 1.4rem; }
+  .controls__button { width: 100%; }
+}

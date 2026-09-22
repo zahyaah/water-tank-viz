@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Water Tank Problem</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="page">
+
+  <header class="intro">
+    <h1>Water Tank Problem</h1>
+    <p>
+      Given <code>n</code> always greater than <code>-1</code>, representing the
+      block height, compute the units of water stored in-between the blocks.
+    </p>
+  </header>
+
+  <form class="controls" id="heights-form" novalidate>
+    <label class="controls__label" for="heights-input">Block heights</label>
+    <div class="controls__row">
+      <input
+        class="controls__input"
+        id="heights-input"
+        name="heights"
+        type="text"
+        inputmode="numeric"
+        autocomplete="off"
+        spellcheck="false"
+        value="0,4,0,0,0,6,0,6,4,0"
+        aria-describedby="heights-hint error">
+      <button class="controls__button" type="submit">Compute</button>
+    </div>
+    <p class="controls__hint" id="heights-hint">
+      Whole numbers greater than <code>-1</code>, separated by commas.
+    </p>
+    <p class="error" id="error" role="alert" hidden></p>
+  </form>
+
+  <section class="diagram" aria-labelledby="input-caption">
+    <h2 class="diagram__caption" id="input-caption">Input</h2>
+    <div class="diagram__canvas" id="input-figure"></div>
+    <p class="legend">
+      <span class="legend__item"><span class="legend__swatch legend__swatch--block"></span>Block</span>
+      <span class="legend__item"><span class="legend__swatch legend__swatch--water"></span>Water</span>
+    </p>
+  </section>
+
+  <section class="diagram" aria-labelledby="output-caption">
+    <h2 class="diagram__caption diagram__caption--output" id="output-caption">Output</h2>
+    <div class="diagram__canvas" id="output-figure"></div>
+  </section>
+
+</main>
+
+<script src="src/water-tank.js"></script>
+<script src="src/renderer.js"></script>
+<script src="src/app.js"></script>
+
+</body>
+</html>
